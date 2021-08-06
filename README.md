@@ -5,10 +5,15 @@ Authors: Neil Cox, Bruce E. Young, Philip Bowles, Miguel Fernandez, Julie Marin,
 
 
 1) Tetrapod trees used in computing PD
+
 amphibians_imputed_resolved_100trees.trees.zip
+
 birds_imputed_resolved_100trees.trees.zip
+
 mammals_imputed_resolved_100trees.trees.zip
+
 reptiles_imputed_resolved_100trees.trees.zip
+
 
 Methods
 
@@ -17,5 +22,7 @@ To calculate the phylogenetic diversity (PD), we used published timetrees of mam
 We thoroughly compared the species name mismatches between geographical and phylogenetic data in order to match synonyms and correct misspelled names. We also imputed species for which the genus was already present in the tree (262 amphibians, 1694 bird, 236 mammal, and 777 reptile species). Imputed species were randomly attached to a node within the genus subtree. Because polytomies can result in an overestimation of the phylogenetic diversity, we randomly resolved all polytomies using the Rangel et al. (Evolution, 2015) method implemented in R code. This procedure was performed 100 times for birds, and one time for each of the 100 amphibian, 100 mammal and 100 reptile timetrees.
 
 
-2) Code used to compute PD and to perform the sensitivity analysis.
+
+2) Code used to compute PD and to perform the sensitivity analysis
+
 PD_computation.r
