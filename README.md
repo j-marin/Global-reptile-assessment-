@@ -26,3 +26,9 @@ We thoroughly compared the species name mismatches between geographical and phyl
 2) Code used to compute PD and to perform the sensitivity analysis
 
 PD_computation.r
+
+
+
+2) Code used to impute species (for which the genus was already present in the tree) and to resolve polytomies.
+
+species_imputation.r
