@@ -5,10 +5,10 @@ library(caper)
 
 ### R code to compute the phylogenetic diversity (PD)
 
-## sub-sampling (here it corresponds to the 100x100 resolution analysis, it should be change accordingly to the raster resolution used)
-m <- matrix(rep(0,82248), nrow = 184, ncol = 447)
-rg <- seq(1, 82248, 10000)
-rg <- c(rg, 82249)
+## sub-sampling (here it corresponds to the 50x50 resolution analysis, it should be change accordingly to the raster resolution used)
+m <- matrix(rep(0,328624), nrow = 368, ncol = 893)
+rg <- seq(1, 328624, 10000)
+rg <- c(rg, 328625)
 
 ## R objects
 # str_names2 : vector of mode character containing the species names with both genetic and geographic data
