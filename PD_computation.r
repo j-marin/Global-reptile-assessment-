@@ -57,11 +57,14 @@ for (j in 1:length(rg)) {
 					sp.x <- sp.cell [which(genus.cell == imputed.genus[mm])]
 					sp.genet <- sp.x[is.na(match(sp.x, imputed.sp))]
 					sp.imputed <- sp.x[!is.na(match(sp.x, imputed.sp))]
-					ed.x[!is.na(match(ed.x$species, sp.imputed)),2] <- mean(ed.x[!is.na(match(ed.x$species, sp.genet)),2])
+					if (length(sp.genet) > 1) {
+						ed.x[!is.na(match(ed.x$species, sp.imputed)),2] <- mean(ed.x[!is.na(match(ed.x$species, sp.genet)),2])
 					
-					ed.x[!is.na(match(ed.x$species, sp.x)),3] <- ed.x[!is.na(match(ed.x$species, sp.x)),2]
-					ed.x[!is.na(match(ed.x$species, sp.x)),3] <- mean(ed.x[!is.na(match(ed.x$species, sp.x)),3])
+						ed.x[!is.na(match(ed.x$species, sp.x)),3] <- ed.x[!is.na(match(ed.x$species, sp.x)),2]
+						ed.x[!is.na(match(ed.x$species, sp.x)),3] <- mean(ed.x[!is.na(match(ed.x$species, sp.x)),3])
+						}
 					}}
+
 						
 			pd.k[p,k] <- mean(colSums(ed.x[,2:3]))
 			}
@@ -96,17 +99,18 @@ for (j in 1:length(rg)) {
 			
 			ed.x <- ed.calc(t.cell)$spp
 			ed.x["ED2"] <- ed.x[,2]
-
 			# sensitivity analysis
 			if (length(imputed.genus) > 0) {
 				for (mm in 1:length(imputed.genus)) {
 					sp.x <- sp.cell [which(genus.cell == imputed.genus[mm])]
 					sp.genet <- sp.x[is.na(match(sp.x, imputed.sp))]
 					sp.imputed <- sp.x[!is.na(match(sp.x, imputed.sp))]
-					ed.x[!is.na(match(ed.x$species, sp.imputed)),2] <- mean(ed.x[!is.na(match(ed.x$species, sp.genet)),2])
-					
-					ed.x[!is.na(match(ed.x$species, sp.x)),3] <- ed.x[!is.na(match(ed.x$species, sp.x)),2]
-					ed.x[!is.na(match(ed.x$species, sp.x)),3] <- mean(ed.x[!is.na(match(ed.x$species, sp.x)),3])
+					if (length(sp.genet) > 1) {
+						ed.x[!is.na(match(ed.x$species, sp.imputed)),2] <- mean(ed.x[!is.na(match(ed.x$species, sp.genet)),2])
+						
+						ed.x[!is.na(match(ed.x$species, sp.x)),3] <- ed.x[!is.na(match(ed.x$species, sp.x)),2]
+						ed.x[!is.na(match(ed.x$species, sp.x)),3] <- mean(ed.x[!is.na(match(ed.x$species, sp.x)),3])
+						}
 					}}
 						
 			pd.k[p,k] <- mean(colSums(ed.x[,2:3]))
@@ -119,7 +123,7 @@ for (j in 1:length(rg)) {
 	
 	else {pd.all <- cbind(rep(0, length(sr.k)), sr.k)}
 
-	write.table (pd.all, file = "/Users/Julie/Desktop/SRA_project/FinalGRA/ED_uncertainty/100x100/pd.nt_mammals_median.txt", quote=FALSE, append = TRUE, col.names = FALSE, row.name = FALSE)
+	write.table (pd.all, file = "pd.nt_mammals_median.txt", quote=FALSE, append = TRUE, col.names = FALSE, row.name = FALSE)
 
 	print(j)}
 
