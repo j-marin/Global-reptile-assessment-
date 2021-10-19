@@ -3,6 +3,8 @@
 #' ---
 #' 
 #' ## Set things up
+#' ### Load custom functions
+source("code/functions.R")
 #' ### Create new input raster file directories
 dir.create("data/input_rasters")
 #' #### Create directories for 50km resolution rasters
