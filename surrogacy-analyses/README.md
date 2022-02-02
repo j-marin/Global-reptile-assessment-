@@ -8,15 +8,16 @@ Data
 All individual species ranges used in computing and mapping surrogacy can be downloaded at:
 https://transfer.natureserve.org/download/Publications/Global_Reptiles/
 
-All data files necessary to reproduce figures related to surrogacy in the main body of the paper can be found in the folder "surrogacy-analyses/data/"
+All data files necessary to reproduce figures related to surrogacy in the main body of the paper can be found in the folder:
+- "surrogacy-analyses/data/"
 
 Methods
 
 Code used to run Zonation analyses and compute surrogacy among tetrapod classes in conservation planning can be found here:
-"surrogacy-analyses/code/run-surrogacy-analyses-50km-resolution"
-"surrogacy-analyses/code/run-surrogacy-analyses-100km-resolution"
+- "surrogacy-analyses/code/run-surrogacy-analyses-50km-resolution"
+- "surrogacy-analyses/code/run-surrogacy-analyses-100km-resolution"
 
 Code used to map disproportionately threatened species richness and phylogenetic diversity can be found here:
-"surrogacy-analyses/code/map-disproportionately-threatened-diversity"
+- "surrogacy-analyses/code/map-disproportionately-threatened-diversity"
 
 
