@@ -31,7 +31,8 @@ for (j in 1:length(rg)) {
 	colnames(mat.x) <- sp_names2
 
 	## all species
-	sr.k <- pd(mat.x, tree[1][[1]], include.root=TRUE)[,2]
+	# compute species richness
+	sr.k <- pd(mat.x, tree[1][[1]], include.root=TRUE)[,2] 
 	
 	# compute median pd for cells with more than 0 species
 	pd.cells <- which(sr.k > 0)
@@ -79,6 +80,7 @@ for (j in 1:length(rg)) {
 	write.table (pd.all, file = "pd.all_median.txt", quote=FALSE, append = TRUE, col.names = FALSE, row.name = FALSE)
 
 	## non threatened species
+	# compute species richness
 	mat.x2 <- mat.x[,-d]
 	sr.k <- pd(mat.x2, tree[1][[1]], include.root=TRUE)[,2]
 	
