@@ -5,18 +5,33 @@ Authors: Neil Cox, Bruce E. Young, Philip Bowles, Miguel Fernandez, Julie Marin,
 
 Data 
 
-All individual species ranges used in computing and mapping surrogacy can be downloaded at:
-https://transfer.natureserve.org/download/Publications/Global_Reptiles/
+1) Tetrapod trees used in computing PD
 
-All data files necessary to reproduce figures related to surrogacy in the main body of the paper can be found in the folder "surrogacy-analyses/data/"
+amphibians_imputed_resolved_100trees.trees.zip
+
+birds_imputed_resolved_100trees.trees.zip
+
+mammals_imputed_resolved_100trees.trees.zip
+
+reptiles_imputed_resolved_100trees.trees.zip
+
+2) All spatial data files used in computing and mapping PD can be downloaded at:
+https://transfer.natureserve.org/download/Publications/Global_Reptiles/
 
 Methods
 
-Code used to run Zonation analyses and compute surrogacy among tetrapod classes in conservation planning can be found here:
-"surrogacy-analyses/code/run-surrogacy-analyses-50km-resolution"
-"surrogacy-analyses/code/run-surrogacy-analyses-100km-resolution"
+To calculate the phylogenetic diversity (PD), we used published timetrees of mammals (Upham et al. 2019 PLoS biology), birds (Hedges et al. 2015 Molecular Biology and Evolution), and amphibians (Jetz & Pyron 2018 Nature ecology and evolution). For reptiles, we combined two timetrees: a comprehensive squamate timetree containing 9,755 squamate species, including the species Sphenodon punctatus (Tonini et al. 2016 Biological Conservation) and a turtle and crocodilian tree containing 384 species (Colston et al. 2020 BMC Evolutionary Biology). The timetrees contain some species lacking genetic data, added by taxonomic interpolation to maximize taxonomic coverage. In total, we analyzed 33,168 tetrapod species including 10,139 reptiles, 5911 mammals, 9879 birds, and 7239 amphibians. For squamates, and for turtles and crocodiles, 10,000 fully resolved trees were available. For each group, we randomly sampled 100 trees and combined them to obtain 100 fully resolved reptile timetrees, to accommodate for uncertainty. Similarly, we randomly sampled 100 amphibian and 100 mammal timetrees over the 10,000 available. 
 
-Code used to map disproportionately threatened species richness and phylogenetic diversity can be found here:
-"surrogacy-analyses/code/map-disproportionately-threatened-diversity"
+We thoroughly compared the species name mismatches between geographical and phylogenetic data in order to match synonyms and correct misspelled names. We also imputed species for which the genus was already present in the tree (262 amphibians, 1694 bird, 236 mammal, and 777 reptile species). Imputed species were randomly attached to a node within the genus subtree. Because polytomies can result in an overestimation of the phylogenetic diversity, we randomly resolved all polytomies using the Rangel et al. (Evolution, 2015) method implemented in R code. This procedure was performed 100 times for birds, and one time for each of the 100 amphibian, 100 mammal and 100 reptile timetrees.
 
 
+
+2) Code used to compute PD and to perform the sensitivity analysis
+
+PD_computation.r
+
+
+
+3) Code used to impute species (for which the genus was already present in the tree) and to resolve polytomies.
+
+species_imputation.r
