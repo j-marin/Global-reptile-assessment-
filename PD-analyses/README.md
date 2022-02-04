@@ -26,7 +26,8 @@ We thoroughly compared the species name mismatches between geographical and phyl
 
 
 
-2) Code used to compute PD and to perform the sensitivity analysis
+2) Code used to compute PD and to perform the sensitivity analysis (grid cell analyses). 
+The same code, but applied to the reptile timetrees ((i) all species having geographic and phylogenetic data and (ii) not threatened species only) was used to estimate the amount of loss of reptile PD (15.6 by).
 
 PD_computation.r
 
